@@ -1,6 +1,6 @@
 # .NET CORE 6-E-Commerce Website
  ## Tecnologies
-- [x] .NetCore6
+- [x] .NetCore-6
 - [x] SQL
 - [x] EFCore
 - [x] JavaScript 
