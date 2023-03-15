@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-*.rb linguist-language=C
-=======
-*.rb linguist-language=C#
->>>>>>> a69743d6b856c8abb20f30f59926b762a2a91ee6
+*.cs diff=csharp
