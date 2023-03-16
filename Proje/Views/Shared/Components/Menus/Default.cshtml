@@ -1,0 +1,261 @@
+﻿@model IEnumerable<Category>
+
+<!-- start preloader -->
+<div id="loader-wrapper">
+	<div class="logo"></div>
+	<div id="loader">
+	</div>
+</div>
+<!-- end preloader -->
+<!-- header area start -->
+<div class="header-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-3 col-lg-3">
+				<div class="logo-area">
+					<a href="/Home/Index"><img src="~/img/logo.png" alt="logo" /> </a>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-9 col-lg-9">
+				<div class="top-nav-area">
+					<ul>
+						<li>
+							<a href="/Home/NewProducts">
+								<i class="fa fa-tag"> </i>
+								<div class="nav-select">
+									<div class="text_menu">
+										YENİ ÜRÜNLER
+									</div>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a href="/Home/SpecialProducts">
+								<i class="fa fa-star"> </i>
+								<div class="nav-select">
+									<div class="text_menu">
+										ÖZELLER
+									</div>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a href="/Home/DiscountedProducts">
+								<i class="fa fa-level-down"> </i>
+								<div class="nav-select">
+									<div class="text_menu">
+										İNDİRİMLİ ÜRÜNLER
+									</div>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a href="/Home/HighlightedProducts">
+								<i class="fa fa-heart"> </i>
+								<div class="nav-select">
+									<div class="text_menu">
+										ÖNE ÇIKANLAR
+									</div>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a href="/Home/TopSellerProducts">
+								<i class="fa fa-arrow-up"> </i>
+								<div class="nav-select">
+									<div class="text_menu">
+										ÇOK SATANLAR
+									</div>
+								</div>
+							</a>
+						</li>
+
+						<li>
+							<a href="/Home/MyOrders">
+								<i class="fa fa-gift"> </i>
+								<div class="nav-select">
+									<div class="text_menu">
+										SİPARİŞLERİM
+									</div>
+								</div>
+							</a>
+						</li>
+
+
+						<li>
+							<a href="/Home/Cart">
+								<div class="cart_area">
+									<i class="fa fa-shopping-cart"></i>
+									<div class="nav-select">
+										<div class="text_menu">
+											SEPETİM
+										</div>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- main menu area start  -->
+<div class="main-menu-area ">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-10 col-sm-8 col-md-3 col-lg-3">
+				<div class="menu-cat-area">
+					<h3 class="nk-module-title"><span>Kategori</span></h3>
+					<div class="nk-all-items" style="display:none;">
+						<div class="sp-module-content">
+							<!-- treeview -->
+							<div class="vina-treeview-virtuemart" id="vina-treeview-virtuemart93">
+								<ul class="level0 treeview">
+
+									@foreach (var item in Model.Where(c => c.ParentID == 0))
+									{
+										<li>
+											<a title="@item.CategoryName" href="/Home/kategoriler/@item.CategoryID" class="baby">
+											<span class="catTitle ">@item.CategoryName</span>
+											</a>
+
+											
+											@foreach (var subitem in Model)
+											{
+												if (subitem.ParentID == item.CategoryID)
+												{
+													//eger buraya girdiyse alt kategori var demektir
+													<ul class="sub-menu treeview" style="display:none;">
+													<li class="expandable">
+															<a title="Fashion" href="index.html#" class="">
+																<span class="catTitle ">@subitem.CategoryName</span>
+															</a>													
+													</li>
+													</ul>
+												}
+													
+											}
+											
+										</li>
+									}
+
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-2 col-sm-3 col-md-9 col-lg-9">
+				<nav>
+					<ul>
+						<li class="active">
+							<a href="/Home/Index">Anasayfa</a>
+							<div class="sp-dropdown-inner">
+								<ul class="sp-dropdown-items">
+									<li class="sp-menu-item"><a href="index.html">Home 1</a></li>
+									<li class="sp-menu-item"><a href="index-2.html">Home 2</a></li>
+									<li class="sp-menu-item"><a href="index-3.html">Home 3</a></li>
+									<li class="sp-menu-item"><a href="index-4.html">Home 4</a></li>
+									<li class="sp-menu-item"><a href="index-5.html">Home 5</a></li>
+									<li class="sp-menu-item"><a href="index-6.html">Home 6</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="/Home/Login">GİRİŞ</a></li>
+						<li><a href="/Home/Logout">ÇIKIŞ</a></li>
+						<li><a href="/Home/Register">ÜYE OL</a></li>
+						<li><a href="/Home/AboutUs">Hakkımızda</a></li>
+						<li><a href="/Home/ContactUs">İLETİŞİM</a></li>
+						<li><a href="/Home/DetailedSearch">Detalı Arama</a></li>
+						<li @* style="display:none;"*@><a href="/Admin/Login">ADMİN PANEL</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- main menu area end  -->
+<!-- mobile-menu-area start -->
+<div class="mobile-menu-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="mobile-menu">
+					<nav id="dropdown">
+						<ul>
+							<li>
+								<a href="/Home/Index">Anasayfa</a>
+								<ul>
+									<li><a href="index.html">Home 1</a></li>
+									<li><a href="index-2.html">Home 2</a></li>
+									<li><a href="index-3.html">Home 3</a></li>
+									<li><a href="index-4.html">Home 4</a></li>
+									<li><a href="index-5.html">Home 5</a></li>
+									<li><a href="index-6.html">Home 6</a></li>
+								</ul>
+							</li>
+
+							<li><a href="/Home/Login">GİRİŞ</a></li>
+							<li><a href="/Home/Logout">ÇIKIŞ</a></li>
+							<li><a href="/Home/Register">ÜYE OL</a></li>
+							<li><a href="/Home/AboutUs">Hakkımızda</a></li>
+							<li><a href="/Home/ContactUs">İLETİŞİM</a></li>
+							<li><a href="/Home/DetailedSearch">Detalı Arama</a></li>
+							<li @* style="display:none;"*@><a href="/Admin/Login">ADMİN PANEL</a></li>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- mobile-menu-area end -->
+<!-- search area start  -->
+<div class="nk-search-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3">
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+				<div class="nk-search">
+					@*<div class="select-wrapper">
+					<select class="select-nksearch">
+					<option selected="selected">All Categories</option>
+					<option>Baby</option>
+					<option>Camera &amp; Camcorder</option>
+					<option>-- Bags</option>
+					<option>---- Blazers</option>
+					<option>---- Bootees  Bags</option>
+					<option>---- Coats &amp; Jackets</option>
+					<option>Fashion &amp; Accessories</option>
+					<option>-- Rings</option>
+					<option>---- Diamond Bracelets</option>
+					<option>Health &amp; Beauty</option>
+					<option>-- Clothing</option>
+					<option>-- Handbags</option>
+					<option>---- Kids</option>
+					<option>---- Sandals</option>
+					</select>
+					</div>*@
+					<div class="search_input">
+						<input type="text" placeholder="Type and hit enter" />
+						@*<div class="search-button-wrapper">
+						<button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+						</div>*@
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- main menu area end  -->
