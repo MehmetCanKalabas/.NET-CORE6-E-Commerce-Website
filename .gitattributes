@@ -1,2 +1,6 @@
+<<<<<<< Updated upstream
 
 *.cs text diff=csharp
+=======
+*.rb linguist-language=C#
+>>>>>>> Stashed changes
