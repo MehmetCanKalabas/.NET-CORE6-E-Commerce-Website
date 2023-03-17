@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Proje.Models.MVVM;
 
 namespace Proje.Models
 {
-	public class iakademi45Context : DbContext
+    public class iakademi45Context : DbContext
 	{
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

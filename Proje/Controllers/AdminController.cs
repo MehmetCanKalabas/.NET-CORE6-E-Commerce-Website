@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Proje.Models;
+using Proje.Models.MVVM;
 
 namespace Proje.Controllers
 {
@@ -17,6 +18,7 @@ namespace Proje.Controllers
             return View();
         }
 
+        //Login Control
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login([Bind("Email","Password","NameSurname")] User user)

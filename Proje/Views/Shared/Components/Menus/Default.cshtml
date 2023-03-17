@@ -123,7 +123,7 @@
 									@foreach (var item in Model.Where(c => c.ParentID == 0))
 									{
 										<li>
-											<a title="@item.CategoryName" href="/Home/kategoriler/@item.CategoryID" class="baby">
+											<a title="@item.CategoryName" href="/Home/CategoryPage/@item.CategoryID" class="baby">
 											<span class="catTitle ">@item.CategoryName</span>
 											</a>
 
@@ -135,7 +135,7 @@
 													//eger buraya girdiyse alt kategori var demektir
 													<ul class="sub-menu treeview" style="display:none;">
 													<li class="expandable">
-															<a title="Fashion" href="index.html#" class="">
+															<a title="@subitem.CategoryName" href="/Home/CategoryPage/@subitem.CategoryID" class="">
 																<span class="catTitle ">@subitem.CategoryName</span>
 															</a>													
 													</li>

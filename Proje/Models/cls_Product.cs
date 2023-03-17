@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Proje.Models.MVVM;
 
 namespace Proje.Models
 {
@@ -125,6 +126,17 @@ namespace Proje.Models
         {
             Product product = context.Products.FirstOrDefault(p => p.StatusID == 6);
             return product;
+        }
+
+        public List<Product> ProductSelectWithCategoryID(int id)
+        {
+            List<Product>? products = context.Products.Where(p => p.CategoryID == id).ToList();
+            return products;
+        }
+        public List<Product> ProductSelectWithSupplierID(int id)
+        {
+            List<Product>? products = context.Products.Where(p => p.SupplierID == id).ToList();
+            return products;
         }
     }
 }

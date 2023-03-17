@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Proje.Models.MVVM;
 
 namespace Proje.Models
 {

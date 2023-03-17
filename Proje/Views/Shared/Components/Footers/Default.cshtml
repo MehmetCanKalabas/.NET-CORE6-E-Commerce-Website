@@ -1,0 +1,92 @@
+﻿@model List<Supplier>
+
+<!-- Brand area start -->
+<div class="brand-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="all-p-title">
+					<h3>Brand &amp; Clients</h3>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<div class="all-brand singal-p">
+
+				@foreach (var item in Model)
+				{
+					<div class="singal_brand">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<a href="/Home/SupplierPage/@item.SupplierID"> <img src="~/resimler/@item.PhotoPath" alt="" style="height:100px;width:200px;" /> </a>
+						</div>
+					</div>
+				}
+				
+				
+			</div>
+		</div>
+	</div>
+</div>
+<!-- footer top area start -->
+<section id="sp-bottom-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-6 sp-bottomcontact">
+				<div class="sp-column ">
+					<div class="sp-module ">
+						<h3 class="sp-module-title"><span>HAKKIMIZDA</span></h3>
+						<div class="sp-module-content">
+							<div class="custom">
+								<div class="t-bottom-content">
+									<p class="adress">
+										<em class="fa fa-map-marker"></em>
+										<span class="ft-content">@await Component.InvokeAsync("Address")</span>
+									</p>
+									<p class="phone">
+										<em class="fa fa-phone"></em>
+										<span class="ft-content">+880 1922262289</span>
+									</p>
+									<p class="email">
+										<em class="fa fa-envelope"></em>
+										<span class="ft-content">info@demo.com</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-6 sp-bottomcontact">
+				<div class="sp-column ">
+					<div class="sp-module Subscribe-area">
+						<h3 class="sp-module-title"><span>Newsletter</span></h3>
+						<div class="sp-module-content">
+							<p>Typi non habent claritatem insitam; est usus legentis in iis qui facit </p>
+							<div class="newsletter-from">
+								<form action="index.html#">
+									<input type="text" placeholder="E-mail" />
+									<input type="submit" value="Subscribe" />
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer id="sp-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-6">
+				<p>Copyright &copy; 2015 <a href="../../../bootexperts_default.html" target="_blank">Bootexperts</a> All Rights Reserved</p>
+			</div>
+			<div class="col-sm-6 col-md-6">
+				<div class="payment-logo">
+					<img src="~/img/payment.png" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- footer top area end -->

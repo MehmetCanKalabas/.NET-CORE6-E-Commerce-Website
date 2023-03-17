@@ -1,0 +1,14 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "CategoryPage";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.ProductName</li>
+    }
+</ul>
+

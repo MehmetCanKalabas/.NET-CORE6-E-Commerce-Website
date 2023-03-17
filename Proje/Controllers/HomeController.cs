@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Proje.Models;
+using Proje.Models.MVVM;
 
 namespace Proje.Controllers
 {
@@ -34,6 +35,17 @@ namespace Proje.Controllers
         public IActionResult CartProcess(int id)
         {
             return View();
+        }
+
+        public IActionResult CategoryPage(int id)
+        {
+            List<Product> products = cp.ProductSelectWithCategoryID(id);
+            return View(products);
+        }
+        public IActionResult SupplierPage(int id)
+        {
+            List<Product> products = cp.ProductSelectWithSupplierID(id);
+            return View(products);
         }
 
     }
