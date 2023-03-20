@@ -9,18 +9,25 @@ namespace Proje.Controllers
         MainPageModel mpm = new MainPageModel();
         iakademi45Context context = new iakademi45Context();
         cls_Product cp = new cls_Product();
+        int mainpageCount = 0;
+
+
+        public HomeController()
+        {
+            this.mainpageCount = context.Settings.FirstOrDefault(s => s.SettingID == 1).MainPageCount;
+        }
         public IActionResult Index()
         {
-            mpm.SliderProducts = cp.ProductSelect("Slider");
+            mpm.SliderProducts = cp.ProductSelect("Slider", mainpageCount,"");
             mpm.ProductOfDay = cp.ProductDetails("ProductOfDay");//günün ürünü
-            mpm.NewProducts = cp.ProductSelect("New");//yeni
-            mpm.SpecialProducts = cp.ProductSelect("Special"); //özel
-            mpm.DiscountedProducts = cp.ProductSelect("Discounted");//indirim
-            mpm.HighlightedProducts = cp.ProductSelect("Highlighted"); // öne çıkan
-            mpm.TopsellerProducts = cp.ProductSelect("Topseller"); // cok satan
-            mpm.StarProducts = cp.ProductSelect("Star"); // yıldız
-            mpm.FeaturedProducts = cp.ProductSelect("Featured"); // fırsat
-            mpm.NotableProducts = cp.ProductSelect("Notable"); // dikkat çeken
+            mpm.NewProducts = cp.ProductSelect("New", mainpageCount,"");//yeni
+            mpm.SpecialProducts = cp.ProductSelect("Special", mainpageCount, ""); //özel
+            mpm.DiscountedProducts = cp.ProductSelect("Discounted", mainpageCount, "");//indirim
+            mpm.HighlightedProducts = cp.ProductSelect("Highlighted", mainpageCount, ""); // öne çıkan
+            mpm.TopsellerProducts = cp.ProductSelect("Topseller", mainpageCount, ""); // cok satan
+            mpm.StarProducts = cp.ProductSelect("Star", mainpageCount, ""); // yıldız
+            mpm.FeaturedProducts = cp.ProductSelect("Featured", mainpageCount, ""); // fırsat
+            mpm.NotableProducts = cp.ProductSelect("Notable", mainpageCount, ""); // dikkat çeken
             
             return View(mpm);
         }
@@ -48,5 +55,15 @@ namespace Proje.Controllers
             return View(products);
         }
 
+        public IActionResult NewProducts()
+        {
+            mpm.NewProducts = cp.ProductSelect("New", mainpageCount,"New");
+            return View(mpm);
+        }
+
+        public PartialViewResult _PartialNewProducts(string pagenumber)
+        {
+            return PartialView();
+        }
     }
 }

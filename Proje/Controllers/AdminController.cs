@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using Proje.Models;
 using Proje.Models.MVVM;
 
@@ -13,6 +14,7 @@ namespace Proje.Controllers
         cls_Category c = new cls_Category();
         cls_Supplier s = new cls_Supplier();
         cls_Status st = new cls_Status();
+        cls_Setting cs = new cls_Setting();
         public IActionResult Login()
         {
             return View();
@@ -545,7 +547,31 @@ namespace Proje.Controllers
             {
                 TempData["Message"] = "HATA";
                 return RedirectToAction(nameof(ProductDelete));
+            }           
+        }
+
+        public IActionResult SettingEdit()
+        {           
+            var setting = cs.SettingDetails();
+
+            return View(setting);
+        }
+
+        [HttpPost]
+        public IActionResult SettingEdit(Setting setting)
+        {
+            bool answer = cls_Setting.SettingUpdate(setting);
+            if (answer == true)
+            {
+                TempData["Message"] = "Güncellendi";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["Message"] = "HATA";
+                return RedirectToAction(nameof(SettingEdit));
             }
         }
+
     }             
 }

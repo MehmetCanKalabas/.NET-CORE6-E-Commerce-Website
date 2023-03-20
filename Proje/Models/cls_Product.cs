@@ -75,49 +75,61 @@ namespace Proje.Models
             }
         }
 
-        public List<Product> ProductSelect(string productName)
+        public List<Product> ProductSelect(string productName, int mainpageCount,string subPageName)
         {
             List<Product> products;
 
             if (productName == "New")
             {
-                products = context.Products.OrderByDescending(p => p.AddDate).Take(8).ToList();
+                if (subPageName == "")
+                {
+                    //Home/Index
+                    products = context.Products.OrderByDescending(p => p.AddDate).Take(mainpageCount).ToList();
+                }
+                else
+                {
+                    //En yeni ürünler
+                    products = context.Products.OrderByDescending(p => p.AddDate).Take(4).ToList();
+                }             
             }
+
+
+
             else if(productName == "Special")
             {
-                products = context.Products.Where(p => p.StatusID == 2).OrderBy(p => p.ProductName).Take(8).ToList();
+                products = context.Products.Where(p => p.StatusID == 2).OrderBy(p => p.ProductName).Take(mainpageCount).ToList();
             }
             else if (productName == "Discounted")
             {
-                products = context.Products.OrderByDescending(p => p.Discount).OrderBy(p => p.ProductName).Take(8).ToList();
+                products = context.Products.OrderByDescending(p => p.Discount).OrderBy(p => p.ProductName).Take(mainpageCount).ToList();
             }
             else if (productName == "Highlighted")
             {
-                products = context.Products.OrderByDescending(p => p.HighLighted).Take(8).ToList();
+                products = context.Products.OrderByDescending(p => p.HighLighted).Take(mainpageCount).ToList();
             }
             else if (productName == "Topseller")
             {
-                products = context.Products.OrderByDescending(p => p.TopSeller).Take(8).ToList();
+                products = context.Products.OrderByDescending(p => p.TopSeller).Take(mainpageCount).ToList();
             }
             else if (productName == "Slider")
             {
-                products = context.Products.Where(p => p.StatusID == 1).Take(8).ToList();
+                products = context.Products.Where(p => p.StatusID == 1).Take(mainpageCount).ToList();
             }
             else if (productName == "Star")
             {
-                products = context.Products.Where(p => p.StatusID == 3).Take(8).ToList();
+                products = context.Products.Where(p => p.StatusID == 3).Take(mainpageCount).ToList();
             }
             else if (productName == "Featured")
             {
-                products = context.Products.Where(p => p.StatusID == 4).Take(8).ToList();
+                products = context.Products.Where(p => p.StatusID == 4).Take(mainpageCount).ToList();
             }
             else if (productName == "Notable")
             {
-                products = context.Products.Where(p => p.StatusID == 5).Take(8).ToList();
+                products = context.Products.Where(p => p.StatusID == 5).Take(mainpageCount).ToList();
             }
             else
             {
-                products = context.Products.Where(p => p.StatusID == 000).Take(8).ToList();
+                products = context.Products.Where(p => p.StatusID == 000).Take(mainpageCount).ToList();
             }
             return products;
         }
