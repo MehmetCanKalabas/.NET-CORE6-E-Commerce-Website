@@ -4,5 +4,6 @@
 - [x] SQL
 - [x] EFCore
 - [x] JavaScript 
+- [x] AJAX 
 - [x] HTML
 - [x] CSS
