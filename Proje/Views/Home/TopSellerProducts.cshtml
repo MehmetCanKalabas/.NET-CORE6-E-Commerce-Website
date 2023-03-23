@@ -1,7 +1,8 @@
-﻿@model List<Product>
+﻿@using PagedList.Core
+@model PagedList.Core.IPagedList<Product>
 
 @{
-    ViewData["Title"] = "SupplierPage";
+    ViewData["Title"] = "TopSellerProducts";
     Layout = "~/Views/Shared/DefaultLayout.cshtml";
 }
 
@@ -17,9 +18,8 @@
 
 							<div class="singl-shop ">
 								<div class="row">
-
-									<div id="products">
-										@foreach (var item in Model)
+									
+									@foreach (var item in Model)
 										{
 											<div class="col-sm-3 col-md-3 col-lg-3">
 												<div class="sp-single">
@@ -29,6 +29,7 @@
 														<div class="quick-view-detail">
 															<a href="/Home/Details/@item.ProductID">Detaylar</a>
 														</div>
+														<div class="sp-label-pro sp-label-pro-hot" style="background-color:#898121;color:white;">TALEP!</div>
 													</div>
 													<div class="sp-info-area">
 														<h2 class="product-name"><a title="@item.ProductName" href="/Home/Details/@item.ProductID">@item.ProductName </a></h2>
@@ -55,12 +56,16 @@
 												</div>
 											</div>
 										}
-									</div>
 
+									<span style="text-align:center;">
+										<pager list="@Model"asp-controller="Home" asp-action="TopSellerProducts" ></pager>
+									</span>
 								</div>
 							</div>
 						</div>
+
 						<input type="hidden" id="pagenumber" value="0" />
+						<input type="hidden" id="scrollheight" value="0" />
 
 					</div>
 				</div>
@@ -68,4 +73,3 @@
 		</div>
 	</div>
 </div>
-<!--Single product area End  -->

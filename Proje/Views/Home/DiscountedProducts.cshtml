@@ -1,8 +1,8 @@
-﻿@model List<Product>
+﻿@model MainPageModel
 
 @{
-    ViewData["Title"] = "SupplierPage";
-    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+	ViewData["Title"] = "DiscountedProducts";
+	Layout = "~/Views/Shared/DefaultLayout.cshtml";
 }
 
 <!-- Single product area start  -->
@@ -18,8 +18,9 @@
 							<div class="singl-shop ">
 								<div class="row">
 
+
 									<div id="products">
-										@foreach (var item in Model)
+										@foreach (var item in Model.DiscountedProducts)
 										{
 											<div class="col-sm-3 col-md-3 col-lg-3">
 												<div class="sp-single">
@@ -29,6 +30,7 @@
 														<div class="quick-view-detail">
 															<a href="/Home/Details/@item.ProductID">Detaylar</a>
 														</div>
+														<div class="sp-label-pro sp-label-pro-hot" style="background-color:#BE6DB7;color:white;">@item.Discount</div>
 													</div>
 													<div class="sp-info-area">
 														<h2 class="product-name"><a title="@item.ProductName" href="/Home/Details/@item.ProductID">@item.ProductName </a></h2>
@@ -57,10 +59,15 @@
 										}
 									</div>
 
+
+
+
 								</div>
 							</div>
-						</div>
+						</div>						
+
 						<input type="hidden" id="pagenumber" value="0" />
+						<input type="hidden" id="scrollheight" value="0" />
 
 					</div>
 				</div>
@@ -69,3 +76,28 @@
 	</div>
 </div>
 <!--Single product area End  -->
+<script>
+	$(window).scroll(function(){
+		//alert("fasfas")
+		
+		if ($(window).scrollTop() - $("#scrollheight").val() == 50 ){
+
+			var pagenumber = parseInt($("#pagenumber").val())
+			var nextpage = pagenumber + 1;
+
+			$.ajax({
+			type: "GET",
+			url: "/Home/_PartialDiscountedProducts",
+			data: { pageno: nextpage },
+			async: true,
+			processData: true,
+			cache: true,
+			success: function (result) {
+				$("#products").append(result)
+				$("#pagenumber").val(+nextpage)
+				$("#scrollheight").val($(window).scrollTop())
+			}
+			})
+		}
+	})
+</script>

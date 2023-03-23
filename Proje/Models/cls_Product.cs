@@ -7,6 +7,7 @@ namespace Proje.Models
     {
 
         iakademi45Context context = new iakademi45Context();
+        int subpageCount = 0;
 
         public async Task<List<Product>> ProductSelect()
         {
@@ -75,11 +76,13 @@ namespace Proje.Models
             }
         }
 
-        public List<Product> ProductSelect(string productName, int mainpageCount,string subPageName)
+        public List<Product> ProductSelect(string mainPageName, int mainpageCount,string subPageName,int pagenumber)
         {
+            subpageCount = context.Settings.FirstOrDefault(s => s.SettingID == 1).SubPageCount;
+
             List<Product> products;
 
-            if (productName == "New")
+            if (mainPageName == "New")
             {
                 if (subPageName == "")
                 {
@@ -88,42 +91,100 @@ namespace Proje.Models
                 }
                 else
                 {
-                    //En yeni ürünler
-                    products = context.Products.OrderByDescending(p => p.AddDate).Take(4).ToList();
-                }             
+                    if (pagenumber == 0)
+                    {
+                        //En yeni ürünler butonuna tıklanınca
+                        products = context.Products.OrderByDescending(p => p.AddDate).Take(subpageCount).ToList();
+                    }
+                    else
+                    {
+                        //ajax
+                        products = context.Products.OrderByDescending(p => p.AddDate).Skip(pagenumber * subpageCount).Take(subpageCount).ToList();
+                    }
+                }
             }
 
+            else if (mainPageName == "Special")
+            {
+                if (subPageName == "")
+                {
+                    //Home/Index
+                    products = context.Products.Where(p => p.StatusID == 2).OrderBy(p => p.ProductName).Take(mainpageCount).ToList();
+                }
+                else
+                {
+                    if (pagenumber == 0)
+                    {
+                        //En yeni ürünler butonuna tıklanınca
+                        products = context.Products.Where(p => p.StatusID == 2).OrderBy(p => p.ProductName).Take(subpageCount).ToList();
+                    }
+                    else
+                    {
+                        //ajax
+                        products = context.Products.Where(p => p.StatusID == 2).OrderBy(p => p.ProductName).Skip(pagenumber* subpageCount).Take(subpageCount).ToList();
+                    }
+                }
+            }
+            else if (mainPageName == "Discounted")
+            {
+                if (subPageName == "")
+                {
+                    //Home/Index
+                    products = context.Products.OrderByDescending(p => p.Discount).Take(mainpageCount).ToList();
+                }
+                else
+                {
+                    if (pagenumber == 0)
+                    {
+                        products = context.Products.OrderByDescending(p => p.Discount).Take(subpageCount).ToList();
+                    }
+                    else
+                    {
+                        //ajax
+                        products = context.Products.OrderByDescending(p => p.Discount).Skip(pagenumber * subpageCount).Take(subpageCount).ToList();
+                    }
+                }
+            }
 
+             else if (mainPageName == "Highlighted")
+             {
+                if (subPageName == "")
+                {
+                    //Home/Index
+                    products = context.Products.OrderByDescending(p => p.HighLighted).Take(mainpageCount).ToList();
+                }
+                else
+                {
+                    if (pagenumber == 0)
+                    {
+                        //En yeni ürünler butonuna tıklanınca
+                        products = context.Products.OrderByDescending(p => p.HighLighted).Take(subpageCount).ToList();
+                    }
+                    else
+                    {
+                        //ajax
+                        products = context.Products.OrderByDescending(p => p.HighLighted).Skip(pagenumber * subpageCount).Take(subpageCount).ToList();
+                    }
+                }
+             }
 
-            else if(productName == "Special")
-            {
-                products = context.Products.Where(p => p.StatusID == 2).OrderBy(p => p.ProductName).Take(mainpageCount).ToList();
-            }
-            else if (productName == "Discounted")
-            {
-                products = context.Products.OrderByDescending(p => p.Discount).OrderBy(p => p.ProductName).Take(mainpageCount).ToList();
-            }
-            else if (productName == "Highlighted")
-            {
-                products = context.Products.OrderByDescending(p => p.HighLighted).Take(mainpageCount).ToList();
-            }
-            else if (productName == "Topseller")
+            else if (mainPageName == "Topseller")
             {
                 products = context.Products.OrderByDescending(p => p.TopSeller).Take(mainpageCount).ToList();
             }
-            else if (productName == "Slider")
+            else if (mainPageName == "Slider")
             {
                 products = context.Products.Where(p => p.StatusID == 1).Take(mainpageCount).ToList();
             }
-            else if (productName == "Star")
+            else if (mainPageName == "Star")
             {
                 products = context.Products.Where(p => p.StatusID == 3).Take(mainpageCount).ToList();
             }
-            else if (productName == "Featured")
+            else if (mainPageName == "Featured")
             {
                 products = context.Products.Where(p => p.StatusID == 4).Take(mainpageCount).ToList();
             }
-            else if (productName == "Notable")
+            else if (mainPageName == "Notable")
             {
                 products = context.Products.Where(p => p.StatusID == 5).Take(mainpageCount).ToList();
             }
@@ -134,7 +195,7 @@ namespace Proje.Models
             return products;
         }
 
-        public Product ProductDetails(string productName)
+        public Product ProductDetails(string mainPageName)
         {
             Product product = context.Products.FirstOrDefault(p => p.StatusID == 6);
             return product;
@@ -142,13 +203,24 @@ namespace Proje.Models
 
         public List<Product> ProductSelectWithCategoryID(int id)
         {
-            List<Product>? products = context.Products.Where(p => p.CategoryID == id).ToList();
+            List<Product>? products = context.Products.Where(p => p.CategoryID == id).OrderBy(p=>p.ProductName).ToList();
             return products;
         }
         public List<Product> ProductSelectWithSupplierID(int id)
         {
-            List<Product>? products = context.Products.Where(p => p.SupplierID == id).ToList();
+            List<Product>? products = context.Products.Where(p => p.SupplierID == id).OrderBy(p => p.ProductName).ToList();
             return products;
+        }
+
+        public static void HighlightedIncrease(int id)
+        {
+            using (iakademi45Context context = new iakademi45Context())
+            {
+                Product product = context.Products.FirstOrDefault(p => p.ProductID == id);
+                product.HighLighted += 1;
+                context.Update(product);
+                context.SaveChanges();
+            }
         }
     }
 }
