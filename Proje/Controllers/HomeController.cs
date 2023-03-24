@@ -10,12 +10,13 @@ namespace Proje.Controllers
         MainPageModel mpm = new MainPageModel();
         iakademi45Context context = new iakademi45Context();
         cls_Product cp = new cls_Product();
+        cls_Order o = new cls_Order();
         int mainpageCount = 0;
 
 
         public HomeController()
         {
-            mainpageCount = context.Settings.FirstOrDefault(s => s.SettingID == 1).MainPageCount;          
+            mainpageCount = context.Settings.FirstOrDefault(s => s.SettingID == 1).MainPageCount;
         }
         public IActionResult Index()
         {
@@ -44,7 +45,43 @@ namespace Proje.Controllers
         public IActionResult CartProcess(int id)
         {
             cls_Product.HighlightedIncrease(id);
-            return View();
+            o.ProductID = id;
+            o.Quantity = 1;
+
+            var cookieOptions = new CookieOptions();
+            //read
+            var cookie = Request.Cookies["sepetim"]; // Tarayıcıdan aldım
+            if (cookie == null)
+            {
+                cookieOptions = new CookieOptions();
+                cookieOptions.Expires = DateTime.Now.AddDays(1); // 1 günlük çerez
+                cookieOptions.Path = "/";
+                o.MyCart = "";
+                o.AddToCart(id.ToString());
+                Response.Cookies.Append("sepetim",o.MyCart, cookieOptions); // Tarayıcıya gönderdim
+                HttpContext.Session.SetString("Message", "Ürün Sepetinize Eklendi.");
+                TempData["Message"] = "Ürün Sepetinize Eklendi.";
+            }
+            else
+            {
+                o.MyCart = cookie; // tarayıcıda ki sepet bilgisini propertye gönderdim
+                if (o.AddToMyCart(id.ToString()) == false)
+                {
+                    //ürün sepete daha önce eklenmemiş,ekle
+                    HttpContext.Response.Cookies.Append("sepetim", o.MyCart, cookieOptions);
+                    cookieOptions.Expires = DateTime.Now.AddDays(1);
+                    HttpContext.Session.SetString("Message", "Ürün Sepetinize Eklendi.");
+                    TempData["Message"] = "Ürün Sepetinize Eklendi.";
+                }
+                else
+                {
+                    //Bu ürün sepette var
+                    HttpContext.Session.SetString("Message", "Bu Ürün Zaten Sepetinizde Var.");
+                    HttpContext.Session.GetString("Message");
+                    TempData["Message"] = "Bu Ürün Zaten Sepetinizde Var.";
+                }
+            }
+            return RedirectToAction("Index");
         }
 
         public IActionResult CategoryPage(int id)
@@ -82,7 +119,6 @@ namespace Proje.Controllers
             mpm.SpecialProducts = cp.ProductSelect("Special", mainpageCount, "Special", pagenumber);
             return PartialView(mpm);
         }
-
         public IActionResult DiscountedProducts()
         {
             mpm.DiscountedProducts = cp.ProductSelect("Discounted", mainpageCount, "Discounted", 0);
