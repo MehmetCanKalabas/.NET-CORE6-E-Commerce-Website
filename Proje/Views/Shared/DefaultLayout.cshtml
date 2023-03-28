@@ -111,3 +111,14 @@
 
 </body>
 </html>
+
+@if(TempData["Message"] != null)
+{
+	<script type="text/javascript">
+		window.onload = function(){
+			var message = '@TempData["Message"]';
+			alert(message);
+		};	
+	</script>
+
+}

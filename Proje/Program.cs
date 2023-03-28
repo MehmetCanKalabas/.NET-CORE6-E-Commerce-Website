@@ -5,6 +5,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//ekledim, süre 1 dk olarak belirlendi sepete ekle
+builder.Services.AddSession(option =>
+{
+    option.IdleTimeout = TimeSpan.FromMinutes(1);
+});
+
 //Ekledim, Türkçe alert 
 builder.Services.AddWebEncoders(o => {
     o.TextEncoderSettings = new System.Text.Encodings.Web.TextEncoderSettings(UnicodeRanges.All);
@@ -22,6 +28,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+//Ekledim
+app.UseSession();
 
 app.UseRouting();
 

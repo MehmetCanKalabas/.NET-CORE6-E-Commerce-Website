@@ -3,6 +3,8 @@ using PagedList.Core;
 using Proje.Models;
 using Proje.Models.MVVM;
 using Microsoft.AspNetCore.Http;
+using System.Security.Policy;
+
 namespace Proje.Controllers
 {
     public class HomeController : Controller
@@ -57,7 +59,7 @@ namespace Proje.Controllers
                 cookieOptions.Expires = DateTime.Now.AddDays(1); // 1 günlük çerez
                 cookieOptions.Path = "/";
                 o.MyCart = "";
-                o.AddToCart(id.ToString());
+                o.AddToMyCart(id.ToString());
                 Response.Cookies.Append("sepetim",o.MyCart, cookieOptions); // Tarayıcıya gönderdim
                 HttpContext.Session.SetString("Message", "Ürün Sepetinize Eklendi.");
                 TempData["Message"] = "Ürün Sepetinize Eklendi.";
@@ -81,6 +83,8 @@ namespace Proje.Controllers
                     TempData["Message"] = "Bu Ürün Zaten Sepetinizde Var.";
                 }
             }
+            //string url = Request.Headers["Referer"].ToString(); // sepete nerede eklediyse orada kalmaya devam edecek.
+            // return RedirectToAction(url);
             return RedirectToAction("Index");
         }
 
@@ -149,6 +153,52 @@ namespace Proje.Controllers
             return View("TopSellerProducts",model);
         }
         
+        public IActionResult Cart()
+        {
+            cls_Order o = new cls_Order();
+            List<cls_Order> sepet;
+
+            if (HttpContext.Request.Query["scid"].ToString() != "")
+            {
+                //sil butonuyla geldi
+                string? scid = HttpContext.Request.Query["scid"];
+                o.MyCart = Request.Cookies["sepetim"]; // tarayıcıdan al , propertye yaz
+                o.DeleteFromMyCart(scid); //propertyden silindi
+                var cookieOptions = new CookieOptions();
+                Response.Cookies.Append("sepetim", o.MyCart, cookieOptions); // tarayıcıya silinmiş(güncel) hali gitti
+                cookieOptions.Expires = DateTime.Now.AddDays(1);
+                TempData["Message"] = "Ürün Sepetten Silindi";
+                //sepet içindeki son halini cart.cshtml sayfasına da gönderecek
+                sepet = o.SelectMyCart();
+                ViewBag.Sepetim = sepet;
+                ViewBag.sepet_tablo_detay = sepet;
+            }
+            else
+            {
+                //Sepetim tıklanınca
+                var cookie = Request.Cookies["sepetim"];
+                if (cookie == null)
+                {
+                    o.MyCart = "";
+                    sepet = o.SelectMyCart();
+                    ViewBag.Sepetim = sepet;
+                    ViewBag.sepet_tablo_detay = sepet;
+                }
+                else
+                {
+                    var cookieOptions = new CookieOptions();
+                    o.MyCart = Request.Cookies["sepetim"];
+                    sepet = o.SelectMyCart();
+                    ViewBag.Sepetim = sepet;
+                    ViewBag.sepet_tablo_detay = sepet;
+                }
+            }
+            if (sepet.Count == 0)
+            {
+                ViewBag.Sepetim = null;
+            }
+            return View();
+        }
 
     }
 }
