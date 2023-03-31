@@ -283,3 +283,5 @@ C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje\bin\Debug\net6.0\runti
 C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje\bin\Debug\net6.0\PagedList.Core.dll
 C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje\bin\Debug\net6.0\PagedList.Core.Mvc.dll
 C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje\obj\Debug\net6.0\Proje.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje\bin\Debug\net6.0\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje\bin\Debug\net6.0\XAct.Core.PCL.dll

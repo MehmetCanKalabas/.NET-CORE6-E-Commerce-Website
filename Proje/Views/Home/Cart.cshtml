@@ -12,8 +12,6 @@
     decimal totalkdv = 0;
 }
 
-
-    
     <!-- wishlist area start  -->
     <div class="wishlist-wrapper">
         <div class="container">
@@ -22,7 +20,6 @@
 
                 @if (ViewBag.Sepetim != null)
                 {
-
                     <div class="cart-wrapper table-responsive">
                         <table class="shop_table cart ">
                             <thead>
@@ -88,7 +85,8 @@
                                     <table class="table-responsive">
                                         <tbody>
 
-                                            @{                                               
+                                            @{
+                                                kdvdahil = 0;
                                                 foreach (var item in ViewBag.Sepetim as IList<cls_Order>)
                                                 {
                                                     totalQuantity += item.Quantity;
@@ -120,8 +118,11 @@
                                         </tbody>
                                     </table>
                                     <div class="submit_crt">
-                                        <input type="submit" class="update_cart" value="SİPARİŞİ ONAYLA" />
-                                        <input type="submit" class="proceed_chack" value="Proceed to Checkout" />
+
+                                       <a href="@Url.Action("Order","Home")" title="Ödeme Adımına Geçiniz">
+                                           <input type="button" class="update_cart" value="Sonrakİ Adıma Geç" />
+                                       </a>
+                                        
                                     </div>
                                 </div>
                             </div>

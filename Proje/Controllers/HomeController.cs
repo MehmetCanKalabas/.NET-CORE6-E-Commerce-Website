@@ -83,9 +83,8 @@ namespace Proje.Controllers
                     TempData["Message"] = "Bu Ürün Zaten Sepetinizde Var.";
                 }
             }
-            //string url = Request.Headers["Referer"].ToString(); // sepete nerede eklediyse orada kalmaya devam edecek.
-            // return RedirectToAction(url);
-            return RedirectToAction("Index");
+            string url = Request.Headers["Referer"].ToString(); // sepete nerede eklediyse orada kalmaya devam edecek.
+            return Redirect(url);
         }
 
         public IActionResult CategoryPage(int id)
@@ -200,5 +199,58 @@ namespace Proje.Controllers
             return View();
         }
 
+        public IActionResult Order()
+        {
+            //HttpContext.Session.SetString("Email", "deneme");
+            //HttpContext.Session.GetString("Email");
+            if (HttpContext.Session.GetString("Email") != null)
+            {
+                //kullanıcı Login.cshtml den giriş yapıp, Session alıp geldi
+                User? usr =  cls_User.SelectMemberInfo(HttpContext.Session.GetString("Email"));
+                return View(usr);
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(User user)
+        {
+            string answer = cls_User.MemberControl(user);
+            if (answer == "error")
+            {
+                HttpContext.Session.SetString("Mesaj","Email/Şifre yanlış girildi.");
+                TempData["Message"] = "Email/Şifre yanlış girildi.";
+                return View();
+            }
+            else if (answer == "admin")
+            {
+                HttpContext.Session.SetString("Email",answer);
+                HttpContext.Session.SetString("Admin",answer);
+                return RedirectToAction("Login","Admin");
+            }
+            else
+            {
+                HttpContext.Session.SetString("Email",answer);
+                return RedirectToAction("Index");
+            }      
+        }
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Register(User user)
+        {
+            return View();
+        }
     }
 }
