@@ -16,6 +16,9 @@ builder.Services.AddWebEncoders(o => {
     o.TextEncoderSettings = new System.Text.Encodings.Web.TextEncoderSettings(UnicodeRanges.All);
 });
 
+//Ekledim, Layout da session login görünümü için
+builder.Services.AddHttpContextAccessor();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

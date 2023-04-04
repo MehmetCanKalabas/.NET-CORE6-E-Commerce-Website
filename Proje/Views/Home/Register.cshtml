@@ -1,4 +1,5 @@
-﻿
+﻿@model User
+
 @{
     ViewData["Title"] = "Register";
     Layout = "~/Views/Shared/DefaultLayout.cshtml";
@@ -13,37 +14,65 @@
                 <div class="login-users">
                     <form action="@Url.Action("Register","Home")" method="post" id="com-form-login">
                         <fieldset class="userdata content" style="border-color:black;">
-                            <h2 class="proopc-process-title" style="font-weight:bold;">Üye Ol</h2>
+                            <h2 class="proopc-process-title" style="font-weight:bold;">BİLGİLERİNİZİ GİRİNİZ</h2>
                             <ul class="form-list">
 
                                 <li>
-                                    <label class="required"><em>*</em>Email:</label>
+                                    <label class="required" asp-for="NameSurname"><em>*</em>Ad Soyad Giriniz</label>
                                     <div class="input-box" id="com-form-login-username">
-                                        <input type="text" placeholder="Email" name="Email" class="inputbox">
+                                        <input type="text" placeholder="Ad Soyad" asp-for="NameSurname" class="inputbox">
                                     </div>
+                                    <span asp-validation-for="NameSurname" class="text-danger"></span>
+                                </li>                               
+
+                                <li>
+                                    <label class="required" asp-for="Email"><em>*</em>Email Giriniz</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" placeholder="Email" asp-for="Email" class="inputbox" maxlength="100" required>
+                                    </div>
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </li>
 
                                 <li>
-                                    <label class="required"><em>*</em>Şifre:</label>
+                                    <label class="required" asp-for="Password"><em>*</em>Şifre Giriniz</label>
                                     <div class="input-box" id="com-form-login-password">
-                                        <input type="password" placeholder="Şifre" name="Password" class="inputbox" id="modlgn-passwd">
+                                        <input type="password" placeholder="Şifre" asp-for="Password" class="inputbox" id="modlgn-passwd" maxlength="100" required>
                                     </div>
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="Telephone"><em>*</em>Telefon Giriniz</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        <input type="text" placeholder="Telefon" asp-for="Telephone" class="inputbox">
+                                    </div>
+                                    <span asp-validation-for="Telephone" class="text-danger"></span>
+                                </li>
+
+                                <li>
+                                    <label class="required" asp-for="InvoıcesAddres"><em>*</em>Fatura Adresi Giriniz</label>
+                                    <div class="input-box" id="com-form-login-username">
+                                        @*<input type="text" placeholder="Fatura Adresi" asp-for="InvoıcesAddres" class="inputbox">*@
+
+                                        <textarea typeof="text" asp-for="InvoıcesAddres" class="inputbox" placeholder="Fatura Adresi" rows="5" cols="69">
+
+                                        </textarea>
+
+                                    </div>
+                                    <span asp-validation-for="InvoıcesAddres" class="text-danger"></span>
                                 </li>
 
                             </ul>
-                        </fieldset>
+                        </fieldset>                       
                         <div class="submit_crt">
-                            <input type="submit" value="Gİrİş Yapınız" class="update_cart" name="Submit">
+                            <input type="submit" value="Üye Ol" class="update_cart" name="Üye Ol">
 
-                            <a href="@Url.Action("Register","Home")" title="Üye Ol">
-                                <input type="button" class="update_cart" value="Üye Ol" />
-                            </a>
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
 <!-- Loging area area End  -->
-

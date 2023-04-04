@@ -11,8 +11,14 @@ namespace Proje.Models
         public string ProductName { get; set; }
         public int Kdv { get; set; }
         public string PhotoPath { get; set; }
+        public string tckimlik_vergi_no { get; set; }
 
         iakademi45Context context = new iakademi45Context();
+
+        public void EfaturaCreate()
+        {
+            //Dijital planet xml dosyası
+        }
 
         //sepete ekle
         //10=1&

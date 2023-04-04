@@ -18,7 +18,7 @@
                             <ul class="form-list">
 
                                 <li>
-                                    <label class="required" asp-for="Email"><em>*</em></label>
+                                    <label class="required" asp-for="Email"><em>*</em>Email Giriniz</label>
                                     <div class="input-box" id="com-form-login-username">
                                         <input type="text" placeholder="Email" asp-for="Email" class="inputbox" maxlength="100" required>
                                     </div>
@@ -26,7 +26,7 @@
                                 </li>
 
                                 <li>
-                                    <label class="required" asp-for="Password"><em>*</em></label>
+                                    <label class="required" asp-for="Password"><em>*</em>Şifre Giriniz</label>
                                     <div class="input-box" id="com-form-login-password">
                                         <input type="password" placeholder="Şifre" asp-for="Password" class="inputbox" id="modlgn-passwd" maxlength="100" required>
                                     </div>
@@ -38,9 +38,9 @@
                         <div class="submit_crt">
                             <input type="submit" value="Gİrİş Yapınız" class="update_cart" name="Submit">
 
-@*                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            <span style="background-color:red;color:white;font-size:20px;">veya</span>
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*@
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <span class="badge badge-warning">veya</span>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 
                             <a href="@Url.Action("Register","Home")" title="Üye Ol">
                                 <input type="button" class="update_cart" value="Üye Ol" />

@@ -4,6 +4,9 @@ using Proje.Models;
 using Proje.Models.MVVM;
 using Microsoft.AspNetCore.Http;
 using System.Security.Policy;
+using XAct;
+using System.Collections.Specialized;
+using System.Text;
 
 namespace Proje.Controllers
 {
@@ -215,6 +218,111 @@ namespace Proje.Controllers
             }
         }
 
+        [HttpPost]
+        public IActionResult Order(IFormCollection frm)
+        {
+            string txt_individual = Request.Form["txt_individual"];
+            string txt_corporate = Request.Form["txt_corporate"];
+
+            if (txt_individual != null)
+            {
+                //bireysel fatura
+                //bu kullanım  webservicecontroller içine metotları yazarsan
+                WebServiceController.tckimlik_vergi_no = txt_individual; 
+                //property olarak kullanırsan da cls_order'da prop ve metotlar
+                o.tckimlik_vergi_no = txt_individual;
+                o.EfaturaCreate();
+            }
+            else
+            {
+                //kurumsal fatura
+                WebServiceController.tckimlik_vergi_no = txt_corporate;
+                o.tckimlik_vergi_no = txt_corporate;
+                o.EfaturaCreate();
+            }
+            string kredikartno = Request.Form["kredikartno"]; //IFormCollection olmadan
+            string kredikartay = frm["kredikartay"];
+            string kredikartyil = frm["kredikartyil"];
+            string kredikartcvv = frm["kredikartcvv"];
+
+            return RedirectToAction("backref");
+
+            //buradan sonraki kodlar, payu,iyzico
+
+            //payu dan gelen örnek kodlar
+
+            /*
+            NameValueCollection data = new NameValueCollection();
+            string url = "https://mcan.com/backref";
+
+            data.Add("BACK_REF",url);
+            data.Add("CC_CVV", kredikartcvv);
+            data.Add("CC_NUMBER", kredikartno);
+            data.Add("EXP_MONTH", kredikartay);
+            data.Add("EXP_YEAR","20" + kredikartyil);
+
+            var deger = "";
+            foreach (var item in data)
+            {
+                var value = item as string;
+                var byteCount = Encoding.UTF8.GetByteCount(data.Get(value));
+                deger += byteCount + data.Get(value);
+            }
+
+            var signatureKey = "Size verilen SECRET_KEY buraya yazılacak";
+
+            var hash = HashWithSignature(deger, signatureKey);
+
+            data.Add("ORDER_HASH",hash);
+
+            var x = POSTFromPAYU("https://secure.payu.com.tr/order/....",data);
+
+            //sanal kart
+            if (x.Contains("<STATUS>SUCCESS</STATUS>")&& x.Contains("<RETURN_CODE>3DS_ENROLLED</RETURN_CODE>"))
+            {
+                //sanal kart(debit kart) ile alışveriş yaptı,bankadan onay aldı
+            }
+            else
+            {
+                //gerçek kart ile alışveriş yaptı,bankadan onay aldı
+            }
+            */
+        }
+
+        public IActionResult backgref()
+        {
+            ConfirmOrder();
+            return RedirectToAction("ConfirmPage");
+        }
+
+        public static string OrderGroupGUID = "";
+        public IActionResult ConfirmOrder()
+        {
+            //sipariş tablosuna kaydet
+            //sepetim cookiesinden sepet temizlenecek
+            //e fatura oluştur metodunu cagır
+
+            var cookieOptions = new CookieOptions();
+            var cookie = Request.Cookies["sepetim"];
+            if (cookie != null)
+            {
+                o.MyCart = cookie;
+                OrderGroupGUID = o.OrderCreate(HttpContext.Session.GetString("Email").ToString());
+            }
+
+            return View();
+        }
+
+        public static string HashWithSignature(string deger , string signatureKey)
+        {
+            return "";
+        }
+
+        public static string POSTFromPAYU(string url, NameValueCollection data)
+        {
+            return "";
+        }
+
         public IActionResult Login()
         {
             return View();
@@ -250,7 +358,27 @@ namespace Proje.Controllers
         [HttpPost]
         public IActionResult Register(User user)
         {
+            if (cls_User.loginEmailControl(user) == false)
+            {
+                bool answer = cls_User.AddUser(user);
+
+                if (answer)
+                {
+                    TempData["Message"] = "Üyelik Oluşturuldu/Giriş yapabilirsiniz.";
+                    return RedirectToAction("Login");
+                }          
+            }
+            else
+            {
+                TempData["Message"] = "Bu Email zaten kayıtlı.";
+            }
             return View();
         }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("Email");
+            HttpContext.Session.Remove("Admin");
+            return RedirectToAction("Index");
+        }  
     }
 }

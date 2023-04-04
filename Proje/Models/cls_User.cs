@@ -74,5 +74,37 @@ namespace Proje.Models
             }
             return sb.ToString();
         }
+
+        public static bool AddUser(User user)
+        {
+            using (iakademi45Context context = new iakademi45Context())
+            {
+                try
+                {
+                    user.Active = true;
+                    user.IsAdmin = false;
+                    user.Password = MDSifrele(user.Password);
+                    context.Users.Add(user);
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+        public static bool loginEmailControl(User user)
+        {
+            using(iakademi45Context context = new iakademi45Context())
+            {
+               User usr = context.Users.FirstOrDefault(u => u.Email == user.Email);
+               if (usr == null)
+               {
+                  return false;
+               }
+               return true;
+            }
+        }
     }
 }
