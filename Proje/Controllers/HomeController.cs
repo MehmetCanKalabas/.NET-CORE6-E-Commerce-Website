@@ -245,7 +245,7 @@ namespace Proje.Controllers
             string kredikartyil = frm["kredikartyil"];
             string kredikartcvv = frm["kredikartcvv"];
 
-            return RedirectToAction("backref");
+            return RedirectToAction("backgref");
 
             //buradan sonraki kodlar, payu,iyzico
 
@@ -308,8 +308,18 @@ namespace Proje.Controllers
             {
                 o.MyCart = cookie;
                 OrderGroupGUID = o.OrderCreate(HttpContext.Session.GetString("Email").ToString());
-            }
 
+                cookieOptions.Expires = DateTime.Now.AddDays(1);
+                Response.Cookies.Delete("sepetim"); // tarayıcıdan sepeti sil
+               // cls_User.Send_Sms(OrderGroupGUID);
+               // cls_User.Send_Email(OrderGroupGUID);
+            }
+            return RedirectToAction("ConfirmPage");
+        }
+
+        public IActionResult ConfirmPage()
+        {
+            ViewBag.OrderGroupGUID = OrderGroupGUID;
             return View();
         }
 
@@ -379,6 +389,20 @@ namespace Proje.Controllers
             HttpContext.Session.Remove("Email");
             HttpContext.Session.Remove("Admin");
             return RedirectToAction("Index");
-        }  
+        }
+
+        public IActionResult MyOrders(int id)
+        {
+            if (HttpContext.Session.GetString("Email") != null)
+            {
+                List<vw_MyOrders> orders = o.SelectMyOrders(HttpContext.Session.GetString("Email").ToString());
+                return View(orders);
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+            
+        }
     }
 }

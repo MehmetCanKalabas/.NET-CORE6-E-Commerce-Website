@@ -1,4 +1,5 @@
 ﻿using Proje.Models.MVVM;
+using System.Linq;
 
 namespace Proje.Models
 {
@@ -127,5 +128,32 @@ namespace Proje.Models
             MyCart = NewMyCart;
         }
 
+        public string OrderCreate(string Email)
+        {
+            List<cls_Order> sipList = SelectMyCart();
+            string OrderGroupGUID = DateTime.Now.ToString().Replace(":", "").Replace(" ", "").Replace(".", "").Replace("/", "");
+            DateTime OrderDate = DateTime.Now;
+            foreach (var item in sipList)
+            {
+                Order order = new Order();
+                order.OrderDate = OrderDate;
+                order.OrderGroupGUID = OrderGroupGUID;
+                order.UserID = context.Users.FirstOrDefault(u => u.Email == Email).UserID;
+                order.ProductID = item.ProductID;
+                order.Quantity = item.Quantity;
+                context.Orders.Add(order);
+                context.SaveChanges();
+            }
+            return OrderGroupGUID;
+        }
+
+        public List<vw_MyOrders> SelectMyOrders(string Email)
+        {
+            int UserID = context.Users.FirstOrDefault(u => u.Email == Email).UserID;
+
+            List<vw_MyOrders> myOrders = context.vw_MyOrders.Where(o => o.UserID == UserID).ToList();
+            return myOrders;
+        }
     }
+ 
 }
