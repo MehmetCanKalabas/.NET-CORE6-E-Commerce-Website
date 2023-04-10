@@ -153,7 +153,7 @@ namespace Proje.Models
 
             List<vw_MyOrders> myOrders = context.vw_MyOrders.Where(o => o.UserID == UserID).ToList();
             return myOrders;
-        }
+        } 
     }
  
 }

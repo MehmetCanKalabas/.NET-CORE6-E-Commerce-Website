@@ -1,10 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol.Plugins;
 using Proje.Models.MVVM;
 
 namespace Proje.Models
 {
     public class cls_Product
     {
+        public int ProductID { get; set; }
+        public string ProductName { get; set; }
+        public decimal UnitPrice { get; set; }
+        public string PhotoPath { get; set; }
 
         iakademi45Context context = new iakademi45Context();
         int subpageCount = 0;
@@ -221,6 +227,26 @@ namespace Proje.Models
                 context.Update(product);
                 context.SaveChanges();
             }
+        }
+
+        public List<cls_Product> SelectProductsByDetails(string query)
+        {
+            List<cls_Product> products = new List<cls_Product>();
+
+            SqlConnection sqlConnection = connection.ServerConnect;
+            SqlCommand sqlCommand = new SqlCommand(query,sqlConnection);
+            sqlConnection.Open();
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                cls_Product product = new cls_Product();
+                product.ProductID = Convert.ToInt32(sqlDataReader["ProductID"]);
+                product.ProductName = sqlDataReader["ProductName"].ToString();
+                product.UnitPrice = Convert.ToDecimal(sqlDataReader["UnitPrice"]);
+                product.PhotoPath = sqlDataReader["PhotoPath"].ToString();
+                products.Add(product);
+            }
+            return products;
         }
     }
 }

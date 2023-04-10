@@ -127,12 +127,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maXJtUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/DetailedSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxlZFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/DiscountedProducts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaXNjb3VudGVkUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/DProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEUHJvZHVjdHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/HighlightedProducts.cshtml]
@@ -145,6 +153,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/MyOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeU9yZGVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/NewProducts.cshtml]

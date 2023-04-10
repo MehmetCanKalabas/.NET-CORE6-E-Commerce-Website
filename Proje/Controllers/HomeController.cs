@@ -402,7 +402,49 @@ namespace Proje.Controllers
             {
                 return RedirectToAction("Login");
             }
-            
+        }
+
+        //detaylı arama
+        public IActionResult DetailedSearch(string search)
+        {
+            ViewBag.Categories = context.Categories.ToList();
+            ViewBag.Suppliers = context.Suppliers.ToList();
+            return View();
+        }
+
+        public IActionResult DProducts(int CategoryID,string[] SupplierID,string price,string IsInStock)
+        {
+            price = price.Replace(" ", "");
+            string[] PriceArray = price.Split('-');
+            string startPrice = PriceArray[0];
+            string endPrice = PriceArray[1];
+
+            string sign = ">";
+            if (IsInStock == "0")
+            {
+                sign = ">=";
+            }
+
+            int count = 0;
+            string suppliervalue = ""; //1,2,4
+            for (int i = 0; i < SupplierID.Length; i++)
+            {
+                if (count == 0)
+                {
+                    suppliervalue = "SupplierID = " + SupplierID[i];
+                    count++;
+                }
+                else
+                {
+                    suppliervalue += " or SupplierID =" + SupplierID[i];
+
+                }
+            }
+            string query = "select * from Products where CategoryID = "+CategoryID+" and ("+suppliervalue+") and (UnitPrice > "+startPrice+" and UnitPrice < "+endPrice+ ") and Stock "+sign+" 0 order by ProductName";
+
+            ViewBag.Products = cp.SelectProductsByDetails(query);
+
+            return View();
         }
     }
 }
