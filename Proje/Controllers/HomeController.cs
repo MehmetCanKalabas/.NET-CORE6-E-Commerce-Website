@@ -7,6 +7,9 @@ using System.Security.Policy;
 using XAct;
 using System.Collections.Specialized;
 using System.Text;
+using Microsoft.CodeAnalysis.Differencing;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace Proje.Controllers
 {
@@ -17,7 +20,6 @@ namespace Proje.Controllers
         cls_Product cp = new cls_Product();
         cls_Order o = new cls_Order();
         int mainpageCount = 0;
-
 
         public HomeController()
         {
@@ -445,6 +447,25 @@ namespace Proje.Controllers
             ViewBag.Products = cp.SelectProductsByDetails(query);
 
             return View();
+        }
+
+        public IActionResult PharmacyOnDuty()
+        {
+            //https://openapi.izmir.bel.tr/api/ibb/nobetcieczaneler
+
+            string json = new WebClient().DownloadString("https://openapi.izmir.bel.tr/api/ibb/nobetcieczaneler");
+            var pharmacy = JsonConvert.DeserializeObject<List<Pharmacy>>(json);
+
+            return View(pharmacy);
+        }
+        public IActionResult ArtAndCulture()
+        {
+            //https://openapi.izmir.bel.tr/api/ibb/kultursanat/etkinlikler
+
+            string json = new WebClient().DownloadString("https://openapi.izmir.bel.tr/api/ibb/kultursanat/etkinlikler");
+            var activite = JsonConvert.DeserializeObject<List<Activite>>(json);
+
+            return View(activite);
         }
     }
 }

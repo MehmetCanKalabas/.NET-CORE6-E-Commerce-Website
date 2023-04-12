@@ -70,6 +70,10 @@
               "target": "Package",
               "version": "[6.0.13, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "PagedList.Core": {
               "target": "Package",
               "version": "[1.17.4, )"

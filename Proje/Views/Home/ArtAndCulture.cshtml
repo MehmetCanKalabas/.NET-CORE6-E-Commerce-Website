@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Activite>
+@{
+    ViewData["Title"] = "ArtAndCulture";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(x=>x.Tur)</th>
+                    <th scope="col">@Html.DisplayNameFor(x=>x.Adi)</th>
+                    <th scope="col">@Html.DisplayNameFor(x=>x.EtkinlikBaslamaTarihi)</th>
+                    <th scope="col">@Html.DisplayNameFor(x=>x.EtkinlikBitisTarihi)</th>
+                    <th scope="col">@Html.DisplayNameFor(x=>x.EtklinlikMerkezi)</th>
+                    <th scope="col">@Html.DisplayNameFor(x=>x.KisaAciklama)</th>
+                    <th scope="col">@Html.DisplayNameFor(x=>x.BiletSatisLinki)</th>
+                    <th scope="col">@Html.DisplayNameFor(x=>x.KücükAfis)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Tur</td>
+                        <td>@item.Adi</td>
+                        <td>@item.EtkinlikBaslamaTarihi</td>
+                        <td>@item.EtkinlikBitisTarihi</td>
+                        <td>@item.EtklinlikMerkezi</td>
+                        <td>@item.KisaAciklama.Replace("<br>","")</td>
+                        <td>
+                           @if (item.BiletSatisLinki != null)
+                           {
+                              <a href="@item.BiletSatisLinki" target="_blank" class="btn btn-success">
+                                  ETKİNLİK LİNKİ
+                              </a>
+                           }
+                            
+                        </td>
+                        <td>
+                            <img src="@item.KücükAfis"/>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

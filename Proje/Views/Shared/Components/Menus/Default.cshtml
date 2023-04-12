@@ -27,8 +27,14 @@
 				}
 				<p style="color:white;">@username</p>
 
+
 			</div>
 			<div class="col-sm-12 col-md-9 col-lg-9">
+
+				<span style="background-color:red;color:white;"> İzmir : @await Component.InvokeAsync("Degrees")</span>	
+				<br />
+				<span style="background-color:red;color:white;"> Dolar : @await Component.InvokeAsync("Exchange")</span>
+
 				<div class="top-nav-area">
 					<ul>
 						<li>
@@ -173,8 +179,8 @@
 							<a href="/Home/Index">FAYDALI BİLGİLER</a>
 							<div class="sp-dropdown-inner">
 								<ul class="sp-dropdown-items">
-									<li class="sp-menu-item"><a href="index.html">Nöbetçi Eczaneler</a></li>
-									<li class="sp-menu-item"><a href="index-2.html">Kültür & Sanat</a></li>
+									<li class="sp-menu-item"><a href="/Home/PharmacyOnDuty">Nöbetçi Eczaneler</a></li>
+									<li class="sp-menu-item"><a href="/Home/ArtAndCulture">Kültür & Sanat</a></li>
 								</ul>
 							</div>
 						</li>
