@@ -14,7 +14,9 @@ namespace Proje.Models.MVVM
         public List<Product> StarProducts { get; set; }
         public List<Product> FeaturedProducts { get; set; }
         public List<Product> NotableProducts { get; set; }
-
-
+        public Product ProductDetails { get; set; }
+        public string CategoryName { get; set; }
+        public string BrandName { get; set; }
+        public List<Product> RelatedProducts { get; set; }
     }
 }

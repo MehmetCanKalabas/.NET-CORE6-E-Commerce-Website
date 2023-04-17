@@ -43,8 +43,28 @@ namespace Proje.Controllers
 
         public IActionResult Details(int id)
         {
+            //EfCore
+            //mpm.ProductDetails = context.Products.FirstOrDefault(p => p.ProductID == id);
+
+            mpm.ProductDetails = (from p in context.Products where p.ProductID == id select p).FirstOrDefault();
+
+            //linq
+            mpm.CategoryName = (from p in context.Products
+                                   join c in context.Categories
+                                   on p.CategoryID equals c.CategoryID
+                                   where p.ProductID == id
+                                   select c.CategoryName).FirstOrDefault();
+
+            mpm.BrandName = (from p in context.Products
+                                   join s in context.Suppliers
+                                   on p.SupplierID equals s.SupplierID
+                                   where p.ProductID == id
+                                   select s.BrandName).FirstOrDefault();
+
+            mpm.RelatedProducts = context.Products.Where(p => p.Releted == mpm.ProductDetails.Releted && p.ProductID != id).ToList();
+
             cls_Product.HighlightedIncrease(id);
-            return View();
+            return View(mpm);
         }
 
         //Sepete ekle tıklanınca buraya gelecek
