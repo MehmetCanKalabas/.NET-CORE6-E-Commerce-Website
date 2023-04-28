@@ -248,5 +248,14 @@ namespace Proje.Models
             }
             return products;
         }
+
+        public static List<sp_arama> gettingSearchProducts(string id)
+        {
+            using (iakademi45Context context = new iakademi45Context())
+            {
+                var products = context.sp_aramas.FromSqlRaw($"sp_arama {id}").ToList();
+                return products;
+            }
+        }
     }
 }

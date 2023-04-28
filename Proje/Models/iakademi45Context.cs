@@ -23,5 +23,6 @@ namespace Proje.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<vw_MyOrders> vw_MyOrders { get; set; }
+        public DbSet<sp_arama> sp_aramas { get; set; }
     }
 }

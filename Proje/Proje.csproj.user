@@ -10,5 +10,6 @@
     <WebStackScaffolding_IsPartialViewSelected>True</WebStackScaffolding_IsPartialViewSelected>
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>False</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile>~/Views/Shared/DefaultLayout.cshtml</WebStackScaffolding_LayoutPageFile>
+    <NameOfLastUsedPublishProfile>C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

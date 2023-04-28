@@ -487,5 +487,14 @@ namespace Proje.Controllers
 
             return View(activite);
         }
+
+        public PartialViewResult gettingProducts(string id)
+        {
+            id = id.ToUpper(new System.Globalization.CultureInfo("tr-TR"));
+            List<sp_arama> ulist = cls_Product.gettingSearchProducts(id);
+            string json = JsonConvert.SerializeObject(ulist);
+            var response = JsonConvert.DeserializeObject<List<Search>>(json);
+            return PartialView(response);
+        }
     }
 }

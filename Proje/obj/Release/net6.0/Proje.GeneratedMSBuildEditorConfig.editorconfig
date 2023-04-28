@@ -8,149 +8,253 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Proje
 build_property.RootNamespace = Proje
-build_property.ProjectDir = C:\Users\Mehmet Can Kalabaş\Desktop\Github\Proje\.NET-CORE-6-E-Commerce-Website\Proje\
+build_property.ProjectDir = C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Mehmet Can Kalabaş\Desktop\Github\Proje\.NET-CORE-6-E-Commerce-Website\Proje
+build_property.MSBuildProjectDirectory = C:\Users\Mehmet Can Kalabaş\Desktop\Projeler\Proje\Proje
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/CategoryCreate.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/CategoryCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/CategoryDelete.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/CategoryDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/CategoryDetails.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/CategoryDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/CategoryEdit.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/CategoryEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/CategoryIndex.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/CategoryIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/Index.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/Login.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/ProductCreate.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/ProductCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/ProductDelete.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/ProductDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/ProductDetails.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/ProductDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/ProductEdit.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/ProductEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/ProductIndex.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/ProductIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/StatusCreate.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/SettingEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZ0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/StatusCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/StatusDelete.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/StatusDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/StatusDetails.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/StatusDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/StatusEdit.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/StatusEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/StatusIndex.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/StatusIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3RhdHVzSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/SupplierCreate.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/SupplierCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/SupplierDelete.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/SupplierDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/SupplierDetails.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/SupplierDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/SupplierEdit.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/SupplierEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Admin/SupplierIndex.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Admin/SupplierIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VwcGxpZXJJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Home/CategoryPage.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Footer/InformationalSecurityPolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXEluZm9ybWF0aW9uYWxTZWN1cml0eVBvbGljeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Footer/WorkHealthSecurityandEnvironmentPolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9vdGVyXFdvcmtIZWFsdGhTZWN1cml0eWFuZEVudmlyb25tZW50UG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/ArtAndCulture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRBbmRDdWx0dXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/CategoryPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yeVBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Home/Details.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/ConfirmPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maXJtUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/DetailedSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxlZFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Home/Index.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/DiscountedProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaXNjb3VudGVkUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/DProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/HighlightedProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIaWdobGlnaHRlZFByb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Home/SupplierPage.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/MyOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeU9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/NewProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/PharmacyOnDuty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQaGFybWFjeU9uRHV0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/SpecialProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTcGVjaWFsUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/SupplierPage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdXBwbGllclBhZ2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Shared/AdminLayout.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/TopSellerProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUb3BTZWxsZXJQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/_PartialDiscountedProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGlhbERpc2NvdW50ZWRQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/_PartialHighlightedProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGlhbEhpZ2hsaWdodGVkUHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/_PartialNewProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGlhbE5ld1Byb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Home/_PartialSpecialProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUGFydGlhbFNwZWNpYWxQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFkbWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Shared/Components/Address/Default.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/Components/Address/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWRkcmVzc1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Shared/Components/Footers/Default.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/Components/Degrees/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRGVncmVlc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/Components/Email/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRW1haWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/Components/Exchange/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRXhjaGFuZ2VcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/Components/Footers/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyc1xEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Shared/Components/Menus/Default.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/Components/Menus/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudXNcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Shared/DefaultLayout.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/Components/Telephone/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGVsZXBob25lXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/DefaultLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXERlZmF1bHRMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Shared/Error.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/_ViewImports.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Mehmet Can Kalabaş/Desktop/Github/Proje/.NET-CORE-6-E-Commerce-Website/Proje/Views/_ViewStart.cshtml]
+[C:/Users/Mehmet Can Kalabaş/Desktop/Projeler/Proje/Proje/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

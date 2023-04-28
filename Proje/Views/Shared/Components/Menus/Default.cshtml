@@ -241,28 +241,20 @@
 			<div class="col-xs-0 col-sm-0 col-md-3 col-lg-3">
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				<div class="nk-search">
-					@*<div class="select-wrapper">
-					<select class="select-nksearch">
-					<option selected="selected">All Categories</option>
-					<option>Baby</option>
-					<option>Camera &amp; Camcorder</option>
-					<option>-- Bags</option>
-					<option>---- Blazers</option>
-					<option>---- Bootees  Bags</option>
-					<option>---- Coats &amp; Jackets</option>
-					<option>Fashion &amp; Accessories</option>
-					<option>-- Rings</option>
-					<option>---- Diamond Bracelets</option>
-					<option>Health &amp; Beauty</option>
-					<option>-- Clothing</option>
-					<option>-- Handbags</option>
-					<option>---- Kids</option>
-					<option>---- Sandals</option>
-					</select>
-					</div>*@
+				<div class="nk-search">					
 					<div class="search_input">
-						<input type="text" placeholder="Type and hit enter" />
+
+						<input type="text" lang="tr" id="search" name="search" placeholder="Ürün,Kategori veya Marka Ara" 
+						style="width:800px;" />
+
+						<br />
+
+						<div id="dv" style="width:800px; height:auto;margin-top:23px;border-style:solid;background-color:white;
+							border-color:#f47e1e;position:absolute;z-index:10000;">
+							
+							<ul id="sul"></ul>
+						</div>
+						
 						@*<div class="search-button-wrapper">
 						<button class="search-button" type="submit"><i class="fa fa-search"></i></button>
 						</div>*@
@@ -273,3 +265,26 @@
 	</div>
 </div>
 <!-- main menu area end  -->
+<script>
+	//arama alanı
+	$("#search").keyup(function(){
+		var id = $("#search").val();
+
+		if(id != "" && $("#search").val().length > 1){
+			$.ajax({
+				url: '/Home/gettingProducts/' + id,
+				type: 'Post',
+				ContentType: "application/json;charset=UTF-8",
+				success : function(result){
+					$("#sul").remove();
+					$("#dv").append("<ul id='sul'>")
+					$("#sul").append(result)
+					$("#dv").append("</ul>")
+				}
+			});
+		}
+		else{
+			$("#sul").remove();
+		}
+	});
+</script>
