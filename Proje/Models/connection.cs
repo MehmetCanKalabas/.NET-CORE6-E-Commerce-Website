@@ -8,7 +8,7 @@ namespace Proje.Models
         {
             get 
             { 
-                SqlConnection sqlConnection = new SqlConnection("Server=DESKTOP-5EPP4QL;Database=iakademi45Core_proje;Trusted_Connection=True;TrustServerCertificate=True;");
+                SqlConnection sqlConnection = new SqlConnection("Server=94.73.170.33;Database=u1238636_CoreDB;User Id=u1238636_MCAN;Password=13675484020MCKlbs;TrustServerCertificate=True;");
                 return sqlConnection;
             }
         }

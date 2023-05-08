@@ -13,7 +13,7 @@ namespace Proje.Models.MVVM
         public string NameSurname { get; set; }
 
         [StringLength(100)]
-        [Required]
+        [Required(ErrorMessage = "Email adresi zorunludur.")]
         [EmailAddress]
         public string Email { get; set; }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3XUdqTdrqtPKkoY1X0zH4Tx9LfLO2EsfrW7D4EYFMZ2yNotDb9kektwa86VZf2yboYhfDZmU8cCFGTaK24qVBQ==",
+  "dgSpecHash": "M1yBOhrfiPaWo19rswpTui+NMvzYZC0Nn9cA9SWJJLLSAabfOE1ocytD4DZKLRwubqU3G8bJZEe2Gm2EVH175Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mehmet Can Kalabaş\\Desktop\\Projeler\\Proje\\Proje\\Proje.csproj",
+  "projectFilePath": "C:\\Users\\Mehmet Can Kalabaş\\Desktop\\ProjeYEDEK\\Proje\\Proje.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mehmet Can Kalabaş\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Mehmet Can Kalabaş\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

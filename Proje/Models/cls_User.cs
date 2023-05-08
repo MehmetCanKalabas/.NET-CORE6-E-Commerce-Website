@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Proje.Models.MVVM;
 using System.Net;
 using System.Net.Mail;
@@ -24,6 +25,14 @@ namespace Proje.Models
             using (iakademi45Context context = new iakademi45Context())
             {
                 User usr = context.Users.FirstOrDefault(u => u.Email == email);
+                return usr;
+            }
+        }
+        public static User findbyıd(int id)
+        {
+            using (iakademi45Context context = new iakademi45Context())
+            {
+                User usr = context.Users.FirstOrDefault(u => u.UserID == id);
                 return usr;
             }
         }
@@ -218,5 +227,12 @@ namespace Proje.Models
                 
             }
         }
+
+        //public async Task<User> ProfileEdit(User user)
+        //{
+            
+        //    return result;
+        //}
+
     }
 }

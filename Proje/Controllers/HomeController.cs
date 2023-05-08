@@ -10,6 +10,9 @@ using System.Text;
 using Microsoft.CodeAnalysis.Differencing;
 using System.Net;
 using Newtonsoft.Json;
+using NuGet.Protocol.Core.Types;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace Proje.Controllers
 {
@@ -394,11 +397,11 @@ namespace Proje.Controllers
             {
                 bool answer = cls_User.AddUser(user);
 
-                if (answer)
+                if (answer == true)
                 {
                     TempData["Message"] = "Üyelik Oluşturuldu/Giriş yapabilirsiniz.";
                     return RedirectToAction("Login");
-                }          
+                }
             }
             else
             {
@@ -495,6 +498,40 @@ namespace Proje.Controllers
             string json = JsonConvert.SerializeObject(ulist);
             var response = JsonConvert.DeserializeObject<List<Search>>(json);
             return PartialView(response);
+        }
+
+        public IActionResult Profile()
+        {
+            if (HttpContext.Session.GetString("Email") != null)
+            {
+                User usr = cls_User.SelectMemberInfo(HttpContext.Session.GetString("Email"));
+                return View(usr);
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
+        //[HttpPost]    
+        //public async Task<IActionResult> Profile(User user)
+        //{
+        //    var result = await context.Users.FindAsync(user.InvoıcesAddres);
+        //    result.InvoıcesAddres = user.InvoıcesAddres;
+        //    context.SaveChanges();
+        //    return View(result);
+        //}
+        //
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateBillingAddress(int id, string newBillingAddress)
+        {
+            var user = await context.Users.FindAsync(id);
+            user.InvoıcesAddres = newBillingAddress;
+            context.Update(user);
+            context.SaveChanges();
+
+            return RedirectToAction("Profile", "Home");
         }
     }
 }

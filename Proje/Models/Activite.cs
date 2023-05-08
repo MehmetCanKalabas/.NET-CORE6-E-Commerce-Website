@@ -9,6 +9,6 @@
         public string EtklinlikMerkezi { get; set; }
         public string KisaAciklama { get; set; }
         public string BiletSatisLinki { get; set; }
-        public string KücükAfis { get; set; }
+        public string KucukAfis { get; set; }
     }
 }

@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 //ekledim, süre 1 dk olarak belirlendi sepete ekle
 builder.Services.AddSession(option =>
 {
-    option.IdleTimeout = TimeSpan.FromMinutes(1);
+    option.IdleTimeout = TimeSpan.FromMinutes(5);
 });
 
 //Ekledim, Türkçe alert 

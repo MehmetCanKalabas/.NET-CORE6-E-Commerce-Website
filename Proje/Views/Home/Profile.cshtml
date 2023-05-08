@@ -1,0 +1,70 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/DefaultLayout.cshtml";
+}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+/*        border: 2px solid;
+*/        font-size: 18px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f47e1e;
+        color: white;
+        font-size: 20px;
+    }
+
+    td {
+        border: 1px solid #ddd;
+    }
+</style>
+
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-3 col-lg-3"></div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <table class="table table-success table-striped">
+                <tr>
+                    <th colspan="2">Profil Bilgileriniz</th>
+                </tr>
+                <tr>
+                    <td>İsim:</td>
+                    <td>@Model.NameSurname</td>
+                </tr>
+                <tr>
+                    <td>E-posta:</td>
+                    <td>@Model.Email</td>
+                </tr>
+                <tr>
+                    <td>Telefon:</td>
+                    <td>@Model.Telephone</td>
+                </tr>
+                <tr>
+                    <td>Fatura Adresi:</td>
+                    <td>
+                        <form method="post" asp-action="UpdateBillingAddress">
+                            <div class="form-group">
+                                <input type="text" style="" class="form-control" name="newBillingAddress" value="@Model.InvoıcesAddres" />
+                                <input type="hidden" name="id" value="@Model.UserID" />
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">
+                    Güncelle
+                </button>
+            </div>
+        </div>
+    </div>
